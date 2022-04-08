@@ -31,7 +31,7 @@ void main(){
 
     for (int i = 0; i < cantidadClientes; i++)
     {
-        printf("\nCliente %d ",&i+1);
+        printf("\nCliente %d ",i+1);
         
         V[i].ClienteID = rand()%100;
 
@@ -49,6 +49,7 @@ void main(){
             V[i].Productos[j].Cantidad = rand()%100;
             V[i].Productos[j].PrecioUnitario = rand()%100 + 10;
             int productoT = rand()%5;
+            //asignar con malloc y lonjitud al tipoproducto
             V[i].Productos[j].TipoProducto = TiposProductos[productoT];
             V[i].Productos[j].ProductoID = rand()%10+1;
         }
@@ -58,6 +59,7 @@ void main(){
 
     for (int i = 0; i < cantidadClientes; i++)
     {
+        int total = 0;
         printf("\nCLiente: %d",i+1);
         printf("\nNombre; ");
         puts(V[i].NombreCliente);
@@ -67,7 +69,9 @@ void main(){
             printf("\n ProductoID: %d \n Cantidad: %d \n Precio: %d$",V[i].Productos[j].ProductoID, V[i].Productos[j].Cantidad,V[i].Productos[j].PrecioUnitario);
             printf("\nTipo: ");
             puts(V[i].Productos[j].TipoProducto);
+            total = total + TotalProducto(V[i].Productos[j]);
         }
+        printf("\nTotal a pagar: %d$",total);
         
     }
     
