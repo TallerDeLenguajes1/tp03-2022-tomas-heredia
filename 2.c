@@ -35,7 +35,7 @@ void main(){
         
         V[i].ClienteID = rand()%100;
 
-        printf("\Nombre de cliente: ");
+        printf("\nNombre de cliente: ");
         getchar();
         gets(Buff);
         V[i].NombreCliente= (char *) malloc((strlen(Buff)+1)*sizeof(char));
