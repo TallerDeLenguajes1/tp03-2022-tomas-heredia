@@ -1,0 +1,12 @@
+ 5
+
+
+Git wiki una sección para alojar documentación. Puede usarse para compartir contenido largo sobre su proyecto, como por ejemplo cómo usarlo, cómo el diseñó o lo mas básicos. Un archivo README le dice rápidamente lo que puede hacer su proyecto, mientras que puede usar un wiki para proporcionar documentación adicional.
+
+6
+
+Memoria dinámica
+Es memoria que se reserva en tiempo de ejecución, esta alojada en el heap. Su principal ventaja frente a la estática, es que su tamaño puede variar durante la ejecución del programa. El uso de memoria dinámica es necesario cuando no se conocemos el número de elementos a tratar.
+
+Memoria estática
+Es el espacio en memoria que se crea al declarar variables de cualquier tipo de dato. La memoria que estas variables ocupan no puede cambiarse durante la ejecución y tampoco puede ser liberada manualmente. se guarda en el stack.
