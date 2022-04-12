@@ -28,6 +28,8 @@ void main(){
     int cantidadClientes;
     printf("Ingrese la cantidad de clientes: ");
     scanf("%d",&cantidadClientes);
+    fflush(stdin);
+
     Cliente *V = (Cliente *) malloc(sizeof(Cliente)*cantidadClientes);
 
     for (int i = 0; i < cantidadClientes; i++)
@@ -45,7 +47,7 @@ void main(){
         V[i].CantidadProductosAPedir = rand()%11+1;
         V[i].Productos = (Producto *) malloc(sizeof(Producto)*V[i].CantidadProductosAPedir);
 
-        for (int j = 0; j < V[j].CantidadProductosAPedir; j++)
+        for (int j = 0; j < V[i].CantidadProductosAPedir; j++)
         {
             V[i].Productos[j].Cantidad = rand()%101;
             V[i].Productos[j].PrecioUnitario = rand () % 101 + 10;;
@@ -63,7 +65,7 @@ void main(){
 
     for (int i = 0; i < cantidadClientes; i++)
     {
-        int total = 0;
+        float total = 0;
         printf("\nCLiente: %d",i+1);
         printf("\nNombre: ");
         puts(V[i].NombreCliente);
@@ -71,15 +73,16 @@ void main(){
         for (int j = 0; j < V[i].CantidadProductosAPedir; j++)
         {
             printf("\nTipo: ");
-            getchar();
+            
             puts(V[i].Productos[j].TipoProducto);
-            printf("\n ProductoID: %d \n Cantidad: %d \n Precio: %f$",V[i].Productos[j].ProductoID, V[i].Productos[j].Cantidad, V[i].Productos[j].PrecioUnitario);
+            printf("\n ProductoID: %d \n Cantidad: %d \n Precio: %.2f$",V[i].Productos[j].ProductoID, V[i].Productos[j].Cantidad, V[i].Productos[j].PrecioUnitario);
             total = total + TotalProducto(V[i].Productos[j]);
         }
+        printf("\nTotal a pagar: %.2f $",total);
+        
        
     }
     
-     printf("\nTotal a pagar: %f$",total);
         getchar();
 
 
